@@ -1,17 +1,14 @@
 {
   "Bakı": {
-    "ehtimal": "73%",
-    "ehali": "2.3 milyon",
-    "qisa_melumat": "Paytaxt şəhəri, iqtisadi və mədəni mərkəzdir."
+    "ehtimal": "25%",
+    "məlumat": "Bakıda doğulma ehtimalı çox yüksəkdir. Paytaxt olduğuna görə əhalinin sıxlığı burada daha çoxdur."
   },
   "Gəncə": {
-    "ehtimal": "10%",
-    "ehali": "330,000",
-    "qisa_melumat": "Azərbaycanın qərbində yerləşən qədim şəhərdir."
+    "ehtimal": "15%",
+    "məlumat": "Gəncə Azərbaycanın ikinci böyük şəhəridir və doğulma ehtimalı burada da yüksəkdir."
   },
-  "Quba": {
-    "ehtimal": "5%",
-    "ehali": "160,000",
-    "qisa_melumat": "Təbiəti və alma bağları ilə məşhur bölgədir."
+  "Şəki": {
+    "ehtimal": "7%",
+    "məlumat": "Şəki bölgəsində doğulma ehtimalı nisbətən aşağıdır, lakin tarixi və gözəlliyi ilə seçilir."
   }
 }
