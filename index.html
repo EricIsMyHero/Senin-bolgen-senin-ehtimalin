@@ -6,94 +6,104 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fff8fc;
-      color: #333;
+      background: #fff0f5;
       padding: 40px;
       text-align: center;
-      max-width: 600px;
-      margin: auto;
+      color: #333;
     }
+
     h1 {
       color: #c2185b;
       margin-bottom: 20px;
     }
+
     select, button {
       font-size: 16px;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      margin-top: 10px;
+      margin: 10px 0;
       width: 80%;
     }
+
     button {
       background-color: #c2185b;
       color: white;
       border: none;
-      margin-top: 20px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #a01048;
     }
-    #result {
-      background: #fff0f5;
-      border-radius: 10px;
-      margin-top: 30px;
-      padding: 20px;
+
+    #confirmBtn {
       display: none;
+    }
+
+    #result {
+      background: #ffe6f0;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
       box-shadow: 0 0 10px #f9dce5;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>📍 Sənin bölgən, sənin ehtimalın</h1>
+  <h1>📍 Azərbaycan regionu seç</h1>
 
-  <label for="regionSelect"><strong>Azərbaycan bölgəsini seç:</strong></label><br>
   <select id="regionSelect">
-    <option value="">-- Bölgə seçin --</option>
-  </select><br>
+    <option value="">-- Rayon seçin --</option>
+  </select>
 
-  <button onclick="showRegionInfo()">Təsdiqlə</button>
+  <br>
+  <button id="confirmBtn" onclick="showInfo()">Təsdiqlə</button>
 
   <div id="result"></div>
 
   <script>
-    let regionsData = {};
+    let bolgeler = {};
 
-    // JSON faylını yüklə
-    fetch('bolgeler.json')
+    // bolgeler.json-u yüklə
+    fetch("bolgeler.json")
       .then(res => res.json())
       .then(data => {
-        regionsData = data;
-        const select = document.getElementById('regionSelect');
+        bolgeler = data;
+        const select = document.getElementById("regionSelect");
+
+        // Rayon adlarını select-ə əlavə et
         Object.keys(data).forEach(region => {
-          const option = document.createElement('option');
+          const option = document.createElement("option");
           option.value = region;
           option.textContent = region;
           select.appendChild(option);
         });
       });
 
-    // Təsdiqlə düyməsinə basıldıqda
-    function showRegionInfo() {
-      const selected = document.getElementById('regionSelect').value;
-      const result = document.getElementById('result');
+    // Rayon seçildikdə "Təsdiqlə" düyməsini göstər
+    document.getElementById("regionSelect").addEventListener("change", function() {
+      const confirmBtn = document.getElementById("confirmBtn");
+      if (this.value) {
+        confirmBtn.style.display = "inline-block";
+      } else {
+        confirmBtn.style.display = "none";
+      }
+    });
 
-      if (!selected || !regionsData[selected]) {
-        result.style.display = 'block';
-        result.innerHTML = 'Zəhmət olmasa bir bölgə seçin.';
+    function showInfo() {
+      const selected = document.getElementById("regionSelect").value;
+      const result = document.getElementById("result");
+
+      if (!bolgeler[selected]) {
+        result.innerHTML = "Məlumat tapılmadı.";
+        result.style.display = "block";
         return;
       }
 
-      const info = regionsData[selected];
-      result.style.display = 'block';
+      const info = bolgeler[selected];
+
       result.innerHTML = `
         <h2>${selected}</h2>
-        <p><strong>Doğulma ehtimalı:</strong> ${info.ehtimal}</p>
-        <p><strong>Əhali:</strong> ${info.ehali}</p>
-        <p><strong>Qısa məlumat:</strong> ${info.qisa_melumat}</p>
-      `;
-    }
-  </script>
-</body>
-</html>
+        <p><strong>Doğulma ehtimalı:</
