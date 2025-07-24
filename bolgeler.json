@@ -1,4 +1,17 @@
-{ "Baki": { "probability": "%37 ehtimal", "facts": [ "Bakıda doğulanların əksəriyyəti paytaxtda qalmağa üstünlük verir.", "Bakıda doğulma ehtimalı Azərbaycanın ən yüksək göstəricisidir.", "Bakı 20+ xəstəxana ilə doğum üçün geniş imkanlara malikdir." ] }, 
-"Gence": { "probability": "%15 ehtimal", "facts": [ "Gəncə Azərbaycanın ikinci ən böyük şəhəridir.", "Doğulanların əksəriyyəti kəndlərdən şəhərə miqrasiya edir.", "Təhsil müuəssisələrinin çoxluğu burada doğulanlara üstünlük yaradır." ] }, 
-"Naxcivan": { "probability": "%5 ehtimal", "facts": [ "Naxçıvan coğrafi baxımdan fərqli və izolyasiya olunmuş bölgədir.", "Doğulanların çoxu daha sonra Bakı və Türkiyəyə köç edir.", "Tarixən çoxsaylı doğumlar ailə ənənələri ilə bağlıdır." ] } }
-
+{
+  "Bakı": {
+    "ehtimal": "73%",
+    "ehali": "2.3 milyon",
+    "qisa_melumat": "Paytaxt şəhəri, iqtisadi və mədəni mərkəzdir."
+  },
+  "Gəncə": {
+    "ehtimal": "10%",
+    "ehali": "330,000",
+    "qisa_melumat": "Azərbaycanın qərbində yerləşən qədim şəhərdir."
+  },
+  "Quba": {
+    "ehtimal": "5%",
+    "ehali": "160,000",
+    "qisa_melumat": "Təbiəti və alma bağları ilə məşhur bölgədir."
+  }
+}
